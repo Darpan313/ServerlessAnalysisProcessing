@@ -4,8 +4,8 @@ COPY . /app
 
 WORKDIR /app
 
-RUN sudo apt-get build-dep python-imaging
-RUN sudo apt-get install libjpeg62 libjpeg62-dev
+RUN apt-get build-dep python-imaging
+RUN apt-get install libjpeg62 libjpeg62-dev
 
 RUN pip install wordcloud 
 
