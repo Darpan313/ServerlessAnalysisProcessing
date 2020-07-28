@@ -4,11 +4,9 @@ COPY . /app
 
 WORKDIR /app
 
-RUN sudo apt-get -y install libc-dev
+RUN apk update
 
-RUN sudo apt-get -y install build-essential
-
-RUN pip install -U pip
+RUN apk add make automake gcc g++ subversion python3-dev
 
 RUN pip install -r requirements.txt
 
