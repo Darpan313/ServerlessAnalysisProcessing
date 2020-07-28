@@ -4,8 +4,6 @@ COPY . /app
 
 WORKDIR /app
 
-RUN apt-get update
-
 # Install pip, Python and matplotlib required libraries
 RUN apk update && apk install -y python python-dev python-pip \
     libxft-dev libfreetype6 libfreetype6-dev
