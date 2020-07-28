@@ -5,7 +5,7 @@ COPY . /app
 WORKDIR /app
 
 # Install pip, Python and matplotlib required libraries
-RUN apk update && apk install -y python python-dev python-pip \
+RUN apk update && apk install python python-dev python-pip \
     libxft-dev libfreetype6 libfreetype6-dev
 
 # Install matplotlib
