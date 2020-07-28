@@ -4,8 +4,12 @@ COPY . /app
 
 WORKDIR /app
 
-RUN apt-get build-dep python-imaging
-RUN apt-get install libjpeg62 libjpeg62-dev
+RUN apk update \
+    && apk add --virtual build-deps gcc python3-dev musl-dev zlib-dev postgresql-dev jpeg-dev \  # will be removed after dependent \
+    && apk add postgresql zlib jpeg \
+    && pip install psycopg2 Pillow==5.0.0 \ 
+    && apk del build-deps \
+
 
 RUN pip install wordcloud 
 
